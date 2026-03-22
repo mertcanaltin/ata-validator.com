@@ -19,7 +19,7 @@ const v = new Validator({
   required: ["name"]
 });
 
-const result = v.validate({ name: "Mert", age: 28 });
+const result = v.validate({ name: "Mert", age: 26 });
 console.log(result.valid); // true`}</CodeWindow>
         </div>
         <div className="qs-card">

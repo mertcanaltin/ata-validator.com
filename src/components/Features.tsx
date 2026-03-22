@@ -22,7 +22,7 @@ const v = new Validator({
   required: ["name", "age"]
 });
 
-const result = v.validate({ name: "Mert", age: 28 });
+const result = v.validate({ name: "Mert", age: 26 });
 // { valid: true, errors: [] }`,
     codeTitle: 'example.js',
     lang: 'js' as const,
