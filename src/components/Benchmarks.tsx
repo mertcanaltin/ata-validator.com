@@ -2,18 +2,18 @@ const cards = [
   {
     title: 'validate(obj) — Valid Data',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '15M ops/s' },
-      { label: 'ajv', width: 53, cls: 'ajv', value: '8M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '76M ops/s' },
+      { label: 'ajv', width: 11, cls: 'ajv', value: '8M ops/s' },
     ],
-    speedup: '1.9x faster — combined single-pass codegen',
+    speedup: '9.5x faster — hybrid validator, V8 machine code speed',
   },
   {
     title: 'validate(obj) — Invalid Data',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '13.1M ops/s' },
-      { label: 'ajv', width: 62, cls: 'ajv', value: '8.1M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '34M ops/s' },
+      { label: 'ajv', width: 24, cls: 'ajv', value: '8M ops/s' },
     ],
-    speedup: '1.6x faster — lazy error array, single pass',
+    speedup: '4.3x faster — single-pass error collection',
   },
   {
     title: 'validate(obj) — 100 Users (20KB)',
@@ -58,10 +58,10 @@ const cards = [
   {
     title: 'Schema Compilation',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '112K ops/s' },
-      { label: 'ajv', width: 0.7, cls: 'ajv', value: '773 ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '113K ops/s' },
+      { label: 'ajv', width: 0.7, cls: 'ajv', value: '818 ops/s' },
     ],
-    speedup: '145x faster',
+    speedup: '138x faster',
   },
 ]
 
@@ -70,7 +70,7 @@ export function Benchmarks() {
     <section id="benchmarks" className="benchmarks">
       <h2>Benchmarks</h2>
       <p className="section-desc">
-        Apple Silicon (12 cores). Apples-to-apples comparison — ata is faster on <strong>every</strong> metric.
+        Apple Silicon. Isolated single-schema benchmarks. ata is faster on <strong>every</strong> metric.
       </p>
       <div className="bench-grid">
         {cards.map((card) => (
