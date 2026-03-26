@@ -12,7 +12,7 @@ export function Hero() {
         <p className="hero-desc">
           Native C++ validator built on <strong>simdjson</strong> and{" "}
           <strong>RE2</strong>. Hybrid JS codegen with V8 TurboFan
-          optimizations, 8.5x faster than ajv on validate(obj).
+          optimizations — 68M validations per second.
         </p>
         <div className="hero-buttons">
           <a href="#quickstart" className="btn btn-primary">
