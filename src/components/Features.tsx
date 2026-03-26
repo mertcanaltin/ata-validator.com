@@ -8,7 +8,7 @@ const features = [
     bullets: [
       { text: '4+ GB/s', rest: ' JSON parsing throughput' },
       { text: 'ARM NEON', rest: ' and x86 AVX2/SSE support' },
-      { text: '138x faster', rest: ' schema compilation than ajv' },
+      { text: '138x faster', rest: ' schema compilation' },
     ],
     code: `const { Validator } = require('ata-validator');
 
