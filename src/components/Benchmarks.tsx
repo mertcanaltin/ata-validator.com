@@ -18,10 +18,18 @@ const cards = [
   {
     title: 'validate(obj) — Valid Data',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '17M ops/s' },
-      { label: 'ajv', width: 55, cls: 'ajv', value: '9.4M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '14.6M ops/s' },
+      { label: 'ajv', width: 57, cls: 'ajv', value: '8.3M ops/s' },
     ],
-    speedup: '1.8x faster — hybrid validator, V8 machine code speed',
+    speedup: '1.8x faster — combined single-pass validator',
+  },
+  {
+    title: 'validate(obj) — Invalid Data',
+    bars: [
+      { label: 'ata', width: 100, cls: 'ata', value: '12.9M ops/s' },
+      { label: 'ajv', width: 62, cls: 'ajv', value: '8.0M ops/s' },
+    ],
+    speedup: '1.6x faster — single-pass error collection, no double validation',
   },
   {
     title: 'ReDoS Protection',
