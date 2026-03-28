@@ -5,7 +5,7 @@ const cards = [
       { label: 'ata', width: 100, cls: 'ata', value: '1.28M ops/s' },
       { label: 'ajv', width: 0.06, cls: 'ajv', value: '812 ops/s' },
     ],
-    speedup: '1,580x faster -- lazy compilation, near-zero constructor',
+    speedup: '1,580x faster -- new Validator() only, no compilation yet',
   },
   {
     title: 'First Validation (construct + validate)',
