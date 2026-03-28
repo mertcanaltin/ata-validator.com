@@ -3,41 +3,41 @@ const cards = [
     title: 'Schema Compilation',
     bars: [
       { label: 'ata', width: 100, cls: 'ata', value: '1.6M ops/s' },
-      { label: 'ajv', width: 0.05, cls: 'ajv', value: '763 ops/s' },
+      { label: 'ajv', width: 0.05, cls: 'ajv', value: '781 ops/s' },
     ],
-    speedup: '2,083x faster -- lazy compilation + schema cache',
+    speedup: '2,067x faster -- lazy compilation + schema cache',
   },
   {
     title: 'First Validation (construct + validate)',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '629K ops/s' },
-      { label: 'ajv', width: 0.1, cls: 'ajv', value: '827 ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '614K ops/s' },
+      { label: 'ajv', width: 0.1, cls: 'ajv', value: '775 ops/s' },
     ],
-    speedup: '761x faster -- schema compilation cache',
+    speedup: '793x faster -- schema compilation cache',
   },
   {
     title: 'isValidObject (boolean check)',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '35.5M ops/s' },
-      { label: 'ajv', width: 26, cls: 'ajv', value: '9.1M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '36.0M ops/s' },
+      { label: 'ajv', width: 26, cls: 'ajv', value: '9.4M ops/s' },
     ],
-    speedup: '3.9x faster -- direct property access, optimized codegen',
+    speedup: '3.8x faster -- direct property access, optimized codegen',
   },
   {
     title: 'validate(obj) — Valid Data',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '17.7M ops/s' },
-      { label: 'ajv', width: 54, cls: 'ajv', value: '9.5M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '16.6M ops/s' },
+      { label: 'ajv', width: 59, cls: 'ajv', value: '9.8M ops/s' },
     ],
-    speedup: '1.9x faster -- hybrid codegen',
+    speedup: '1.7x faster -- hybrid codegen',
   },
   {
     title: 'validate(obj) — Invalid Data',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '9.0M ops/s' },
-      { label: 'ajv', width: 58, cls: 'ajv', value: '5.2M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '10.0M ops/s' },
+      { label: 'ajv', width: 56, cls: 'ajv', value: '5.6M ops/s' },
     ],
-    speedup: '1.7x faster -- single-pass error collection',
+    speedup: '1.8x faster -- single-pass error collection',
   },
   {
     title: 'ReDoS Protection',
@@ -50,10 +50,10 @@ const cards = [
   {
     title: 'vs typebox 1.x — Boolean Check (with email)',
     bars: [
-      { label: 'ata', width: 100, cls: 'ata', value: '87.5M ops/s' },
-      { label: 'typebox', width: 21, cls: 'ajv', value: '18.0M ops/s' },
+      { label: 'ata', width: 100, cls: 'ata', value: '90.9M ops/s' },
+      { label: 'typebox', width: 20, cls: 'ajv', value: '18.2M ops/s' },
     ],
-    speedup: '4.9x faster — hand-written format parsers, optimized codegen',
+    speedup: '5.0x faster -- hand-written format parsers, optimized codegen',
   },
   {
     title: 'Cold Start (50 schemas, 3 used)',
