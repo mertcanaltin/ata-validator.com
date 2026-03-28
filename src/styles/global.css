@@ -724,23 +724,62 @@ code {
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 100px 24px 60px;
-    gap: 40px;
+    padding: 90px 16px 48px;
+    gap: 32px;
   }
-  .hero h1 { font-size: 2.2rem; }
-  .hero-stats { gap: 24px; }
-  .stat-value { font-size: 1.3rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero-desc { font-size: 0.95rem; margin-bottom: 24px; }
+  .hero-buttons { flex-wrap: wrap; margin-bottom: 32px; }
+  .hero-stats { flex-wrap: wrap; gap: 16px 32px; }
+  .stat-value { font-size: 1.2rem; }
+  .stat-label { font-size: 0.7rem; }
+
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.75rem; }
+
   .feature-row, .feature-row.reverse {
     grid-template-columns: 1fr;
     direction: ltr;
-    gap: 32px;
+    gap: 24px;
+    padding: 40px 0;
   }
+  .feature-text h3 { font-size: 1.2rem; }
+
   .bench-grid { grid-template-columns: 1fr; }
-  .compliance-inner { grid-template-columns: 1fr; }
+  .bench-item { grid-template-columns: 56px 1fr auto; gap: 8px; }
+  .bench-label { font-size: 0.7rem; }
+  .bench-value { font-size: 0.65rem; }
+
+  .compliance-inner { grid-template-columns: 1fr; gap: 40px; }
+  .compliance h2 { font-size: 1.6rem; }
+
   .qs-grid { grid-template-columns: 1fr; }
+  .code-body { font-size: 0.7rem; padding: 12px; }
+
   .arch-flow { flex-direction: column; align-items: center; }
   .arch-arrow { transform: rotate(90deg); margin: 0; }
-  .footer-inner { grid-template-columns: 1fr; }
+  .arch-step { max-width: 100%; }
+
+  .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .footer-cta { margin-top: 24px; }
+
+  .features { padding: 24px 16px; }
+  .benchmarks { padding: 48px 16px; }
+  .compliance { padding: 48px 16px; }
+  .quickstart { padding: 48px 16px; }
+  .architecture { padding: 48px 16px; }
+
   .foundation h2, .benchmarks h2, .compliance h2,
-  .quickstart h2, .architecture h2, .opensource h2 { font-size: 1.6rem; }
+  .quickstart h2, .architecture h2, .opensource h2 { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.5rem; }
+  .hero { padding: 80px 12px 40px; }
+  .hero-stats { flex-direction: column; gap: 12px; }
+  .hero-stats .stat { flex-direction: row; align-items: baseline; gap: 8px; }
+  .nav-links a:not(.nav-github) { display: none; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .bench-item { grid-template-columns: 48px 1fr auto; }
+  .btn { padding: 8px 16px; font-size: 0.8rem; }
 }
