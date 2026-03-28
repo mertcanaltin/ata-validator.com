@@ -12,7 +12,7 @@ export function Compliance() {
     <section className="compliance">
       <div className="compliance-inner">
         <div className="compliance-text">
-          <h2>98.4% Spec Compliance</h2>
+          <h2>98.6% Spec Compliance</h2>
           <p>
             Tested against the official{' '}
             <a href="https://github.com/json-schema-org/JSON-Schema-Test-Suite" target="_blank">
@@ -30,10 +30,10 @@ export function Compliance() {
                   transform="rotate(-90 60 60)"
                 />
               </svg>
-              <span className="score-text">98.4%</span>
+              <span className="score-text">98.6%</span>
             </div>
             <div className="score-details">
-              <div><strong>937</strong> tests passed</div>
+              <div><strong>939</strong> tests passed</div>
               <div><strong>38</strong> test files</div>
               <div><strong>Draft 2020-12</strong></div>
             </div>
