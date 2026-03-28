@@ -21,9 +21,9 @@ export function Footer() {
           <a href="https://github.com/google/re2" target="_blank">RE2</a>
         </div>
         <div className="footer-col">
-          <h5>Author</h5>
+          <h5>Authors</h5>
           <a href="https://github.com/mertcanaltin" target="_blank">Mert Can Altin</a>
-          <a href="https://x.com/mecaltin" target="_blank">X / Twitter</a>
+          <a href="https://github.com/lemire" target="_blank">Daniel Lemire</a>
         </div>
       </div>
       <div className="footer-cta">
