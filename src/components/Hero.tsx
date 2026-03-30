@@ -14,10 +14,10 @@ const heroTabs = [
   },
   {
     name: "Invalid",
-    title: "validate(obj) — Invalid Data",
+    title: "isValidObject(obj) — Invalid Data",
     entries: [
-      { label: "typebox", value: "3.6 ns", time: 3.6, highlight: false },
-      { label: "ata", value: "35 ns", time: 35, highlight: true },
+      { label: "ata", value: "2.0 ns", time: 2.0, highlight: true },
+      { label: "typebox", value: "2.7 ns", time: 2.7 },
       { label: "ajv", value: "104 ns", time: 104 },
       { label: "valibot", value: "838 ns", time: 838 },
       { label: "zod", value: "11,670 ns", time: 11670 },

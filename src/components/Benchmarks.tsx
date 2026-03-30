@@ -31,12 +31,12 @@ const tabs: BenchTab[] = [
   },
   {
     name: 'Invalid',
-    title: 'validate(obj) — Invalid Data',
-    subtitle: 'Time per validation in nanoseconds, mitata (lower is better)',
+    title: 'isValidObject(obj) — Invalid Data',
+    subtitle: 'Boolean check per validation in nanoseconds, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_all_mitata.mjs',
     entries: [
-      { label: 'typebox', value: '3.6 ns', time: 3.6 },
-      { label: 'ata', value: '35 ns', time: 35, highlight: true },
+      { label: 'ata', value: '2.0 ns', time: 2.0, highlight: true },
+      { label: 'typebox', value: '2.7 ns', time: 2.7 },
       { label: 'ajv', value: '104 ns', time: 104 },
       { label: 'valibot', value: '838 ns', time: 838 },
       { label: 'zod', value: '11,670 ns', time: 11670 },
