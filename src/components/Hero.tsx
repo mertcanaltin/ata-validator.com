@@ -5,36 +5,40 @@ const heroTabs = [
     name: "Validation",
     title: "validate(obj) — Valid Data",
     entries: [
-      { label: "ata", value: "28 ns", time: 28, highlight: true },
-      { label: "ajv", value: "102 ns", time: 102 },
-      { label: "zod", value: "430 ns", time: 430 },
-      { label: "valibot", value: "304 ns", time: 304 },
+      { label: "ata", value: "8.5 ns", time: 8.5, highlight: true },
+      { label: "ajv", value: "37 ns", time: 37 },
+      { label: "typebox", value: "49 ns", time: 49 },
+      { label: "valibot", value: "314 ns", time: 314 },
+      { label: "zod", value: "360 ns", time: 360 },
     ],
   },
   {
     name: "Invalid",
     title: "validate(obj) — Invalid Data",
     entries: [
-      { label: "ata", value: "103 ns", time: 103, highlight: true },
-      { label: "ajv", value: "179 ns", time: 179 },
-      { label: "zod", value: "9,490 ns", time: 9490 },
-      { label: "valibot", value: "836 ns", time: 836 },
+      { label: "typebox", value: "3.5 ns", time: 3.5, highlight: false },
+      { label: "ata", value: "62 ns", time: 62, highlight: true },
+      { label: "ajv", value: "101 ns", time: 101 },
+      { label: "valibot", value: "839 ns", time: 839 },
+      { label: "zod", value: "11,500 ns", time: 11500 },
     ],
   },
   {
     name: "Cold Start",
     title: "First Validation (compile + validate)",
     entries: [
-      { label: "ata", value: "1.6 us", time: 1.6, highlight: true },
-      { label: "ajv", value: "1,200 us", time: 1200 },
+      { label: "ata", value: "1.3 us", time: 1.3, highlight: true },
+      { label: "typebox", value: "51.7 us", time: 51.7 },
+      { label: "ajv", value: "1,060 us", time: 1060 },
     ],
   },
   {
     name: "Compilation",
     title: "Schema Compilation",
     entries: [
-      { label: "ata", value: "617 ns", time: 617, highlight: true },
-      { label: "ajv", value: "1,280,000 ns", time: 1280000 },
+      { label: "ata", value: "467 ns", time: 467, highlight: true },
+      { label: "typebox", value: "50,930 ns", time: 50930 },
+      { label: "ajv", value: "1,140,000 ns", time: 1140000 },
     ],
   },
   {
@@ -63,8 +67,8 @@ export function Hero() {
         <p className="hero-desc">
           Native C++ validator built on <strong>simdjson</strong> and{" "}
           <strong>RE2</strong>. Hybrid JS codegen with V8 TurboFan
-          optimizations, 3.6x faster validation, 2,074x faster
-          compilation, 731x faster cold start.
+          optimizations, 4.3x faster validation, 2,443x faster
+          compilation, 812x faster cold start.
         </p>
         <div className="hero-buttons">
           <a href="#quickstart" className="btn btn-primary">
@@ -80,11 +84,11 @@ export function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-value">3.6x</span>
+            <span className="stat-value">4.3x</span>
             <span className="stat-label">Faster Validation</span>
           </div>
           <div className="stat">
-            <span className="stat-value">2,074x</span>
+            <span className="stat-value">2,443x</span>
             <span className="stat-label">Faster Compilation</span>
           </div>
           <div className="stat">
