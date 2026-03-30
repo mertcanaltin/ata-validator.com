@@ -17,8 +17,8 @@ type BenchTab = {
 
 const tabs: BenchTab[] = [
   {
-    name: 'Validation',
-    title: 'validate(obj) — Valid Data',
+    name: 'Simple',
+    title: 'validate(obj) — Simple Schema',
     subtitle: 'Time per validation in nanoseconds (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_vs_ecosystem.mjs',
     entries: [
@@ -27,6 +27,19 @@ const tabs: BenchTab[] = [
       { label: 'typebox', value: '47 ns', time: 47 },
       { label: 'valibot', value: '304 ns', time: 304 },
       { label: 'zod', value: '430 ns', time: 430 },
+    ],
+  },
+  {
+    name: 'Complex',
+    title: 'validate(obj) — Nested + Array + Pattern',
+    subtitle: 'Time per validation in nanoseconds (lower is better)',
+    link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_vs_ecosystem.mjs',
+    entries: [
+      { label: 'ata', value: '26 ns', time: 26, highlight: true },
+      { label: 'ajv', value: '51 ns', time: 51 },
+      { label: 'typebox', value: '72 ns', time: 72 },
+      { label: 'zod', value: '471 ns', time: 471 },
+      { label: 'valibot', value: '683 ns', time: 683 },
     ],
   },
   {

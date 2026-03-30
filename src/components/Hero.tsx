@@ -2,14 +2,25 @@ import { useState } from "react";
 
 const heroTabs = [
   {
-    name: "Validation",
-    title: "validate(obj) — Valid Data",
+    name: "Simple",
+    title: "validate(obj) — Simple Schema",
     entries: [
       { label: "ata", value: "12 ns", time: 12, highlight: true },
       { label: "ajv", value: "37 ns", time: 37 },
       { label: "typebox", value: "47 ns", time: 47 },
       { label: "valibot", value: "304 ns", time: 304 },
       { label: "zod", value: "430 ns", time: 430 },
+    ],
+  },
+  {
+    name: "Complex",
+    title: "validate(obj) — Nested + Array + Pattern",
+    entries: [
+      { label: "ata", value: "26 ns", time: 26, highlight: true },
+      { label: "ajv", value: "51 ns", time: 51 },
+      { label: "typebox", value: "72 ns", time: 72 },
+      { label: "zod", value: "471 ns", time: 471 },
+      { label: "valibot", value: "683 ns", time: 683 },
     ],
   },
   {
