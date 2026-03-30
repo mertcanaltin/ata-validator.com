@@ -901,6 +901,16 @@ code {
   .stat-value { font-size: 1.2rem; }
   .stat-label { font-size: 0.7rem; }
 
+  .hero-chart { border-radius: 12px; }
+  .hero-chart-body { padding: 16px 14px 14px; }
+  .hero-chart-title { font-size: 0.95rem; }
+  .hero-chart-tabs { padding: 0 8px; overflow-x: auto; }
+  .hero-chart-tab { padding: 10px 10px; font-size: 0.7rem; white-space: nowrap; }
+  .hero-chart-row { grid-template-columns: 60px 1fr auto; gap: 8px; }
+  .hero-chart-label { font-size: 0.7rem; }
+  .hero-chart-value { font-size: 0.7rem; min-width: 60px; }
+  .hero-chart-bar-wrap { height: 24px; }
+
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 0.75rem; }
 
