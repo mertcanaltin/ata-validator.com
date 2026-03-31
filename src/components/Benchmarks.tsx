@@ -22,24 +22,11 @@ const tabs: BenchTab[] = [
     subtitle: 'Time per validation in nanoseconds, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_all_mitata.mjs',
     entries: [
-      { label: 'ata', value: '13 ns', time: 13, highlight: true },
-      { label: 'ajv', value: '37 ns', time: 37 },
-      { label: 'typebox', value: '48 ns', time: 48 },
-      { label: 'valibot', value: '316 ns', time: 316 },
-      { label: 'zod', value: '328 ns', time: 328 },
-    ],
-  },
-  {
-    name: 'Invalid',
-    title: 'isValidObject(obj) — Invalid Data',
-    subtitle: 'Boolean check per validation in nanoseconds, mitata (lower is better)',
-    link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_all_mitata.mjs',
-    entries: [
-      { label: 'ata', value: '2.0 ns', time: 2.0, highlight: true },
-      { label: 'typebox', value: '2.7 ns', time: 2.7 },
-      { label: 'ajv', value: '104 ns', time: 104 },
-      { label: 'valibot', value: '838 ns', time: 838 },
-      { label: 'zod', value: '11,670 ns', time: 11670 },
+      { label: 'ata', value: '9 ns', time: 9, highlight: true },
+      { label: 'ajv', value: '39 ns', time: 39 },
+      { label: 'typebox', value: '50 ns', time: 50 },
+      { label: 'valibot', value: '322 ns', time: 322 },
+      { label: 'zod', value: '339 ns', time: 339 },
     ],
   },
   {
@@ -48,10 +35,22 @@ const tabs: BenchTab[] = [
     subtitle: 'Time per validation in nanoseconds, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_complex_mitata.mjs',
     entries: [
-      { label: 'ata (valid)', value: '26 ns', time: 26, highlight: true },
-      { label: 'ata (invalid)', value: '53 ns', time: 53, highlight: true },
-      { label: 'ajv (valid)', value: '113 ns', time: 113 },
-      { label: 'ajv (invalid)', value: '195 ns', time: 195 },
+      { label: 'ata (valid)', value: '17 ns', time: 17, highlight: true },
+      { label: 'ata (invalid)', value: '58 ns', time: 58, highlight: true },
+      { label: 'ajv (valid)', value: '116 ns', time: 116 },
+      { label: 'ajv (invalid)', value: '194 ns', time: 194 },
+    ],
+  },
+  {
+    name: 'Unevaluated',
+    title: 'unevaluatedProperties — Three-tier hybrid codegen',
+    subtitle: 'Time per validation in nanoseconds, mitata (lower is better)',
+    link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_unevaluated_mitata.mjs',
+    entries: [
+      { label: 'ata (static)', value: '3.3 ns', time: 3.3, highlight: true },
+      { label: 'ata (anyOf)', value: '6.7 ns', time: 6.7, highlight: true },
+      { label: 'ajv (static)', value: '8.7 ns', time: 8.7 },
+      { label: 'ajv (anyOf)', value: '23.2 ns', time: 23.2 },
     ],
   },
   {
@@ -60,9 +59,9 @@ const tabs: BenchTab[] = [
     subtitle: 'Time per cold start, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_all_mitata.mjs',
     entries: [
-      { label: 'ata', value: '1.3 us', time: 1.3, highlight: true },
-      { label: 'typebox', value: '52.9 us', time: 52.9 },
-      { label: 'ajv', value: '1,070 us', time: 1070 },
+      { label: 'ata', value: '2.0 us', time: 2.0, highlight: true },
+      { label: 'typebox', value: '55 us', time: 55 },
+      { label: 'ajv', value: '1,160 us', time: 1160 },
     ],
   },
   {
@@ -71,9 +70,9 @@ const tabs: BenchTab[] = [
     subtitle: 'Time per compilation, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_all_mitata.mjs',
     entries: [
-      { label: 'ata', value: '554 ns', time: 554, highlight: true },
-      { label: 'typebox', value: '52,030 ns', time: 52030 },
-      { label: 'ajv', value: '1,140,000 ns', time: 1140000 },
+      { label: 'ata', value: '556 ns', time: 556, highlight: true },
+      { label: 'typebox', value: '54,000 ns', time: 54000 },
+      { label: 'ajv', value: '1,240,000 ns', time: 1240000 },
     ],
   },
   {

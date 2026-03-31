@@ -5,6 +5,7 @@ const keywords = [
   '$defs', 'enum', 'const', 'format', 'minimum', 'maximum',
   'pattern', 'minLength', 'maxLength', 'uniqueItems',
   'dependentRequired', 'dependentSchemas', 'propertyNames',
+  'unevaluatedProperties', 'unevaluatedItems',
   '$id', 'definitions', 'dependencies',
 ]
 
@@ -13,7 +14,7 @@ export function Compliance() {
     <section className="compliance">
       <div className="compliance-inner">
         <div className="compliance-text">
-          <h2>98.4% Spec Compliance</h2>
+          <h2>96.9% Spec Compliance</h2>
           <p>
             Tested against the official{' '}
             <a href="https://github.com/json-schema-org/JSON-Schema-Test-Suite" target="_blank">
@@ -27,15 +28,15 @@ export function Compliance() {
                 <circle cx="60" cy="60" r="54" fill="none" stroke="#1a2332" strokeWidth="8" />
                 <circle
                   cx="60" cy="60" r="54" fill="none" stroke="#00d4aa" strokeWidth="8"
-                  strokeDasharray="339.3" strokeDashoffset="5.4" strokeLinecap="round"
+                  strokeDasharray="339.3" strokeDashoffset="10.5" strokeLinecap="round"
                   transform="rotate(-90 60 60)"
                 />
               </svg>
-              <span className="score-text">98.4%</span>
+              <span className="score-text">96.9%</span>
             </div>
             <div className="score-details">
-              <div><strong>937</strong> tests passed</div>
-              <div><strong>50</strong> test files</div>
+              <div><strong>1,109</strong> tests passed</div>
+              <div><strong>52</strong> test files</div>
               <div><strong>Draft 7 + 2020-12</strong></div>
             </div>
           </div>

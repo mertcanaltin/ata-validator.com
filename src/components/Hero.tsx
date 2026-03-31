@@ -5,48 +5,47 @@ const heroTabs = [
     name: "Cold Start",
     title: "First Validation (compile + validate)",
     entries: [
-      { label: "ata", value: "1.3 us", time: 1.3, highlight: true },
-      { label: "typebox", value: "52.9 us", time: 52.9 },
-      { label: "ajv", value: "1,070 us", time: 1070 },
+      { label: "ata", value: "2.0 us", time: 2.0, highlight: true },
+      { label: "typebox", value: "55 us", time: 55 },
+      { label: "ajv", value: "1,160 us", time: 1160 },
     ],
   },
   {
     name: "Validation",
     title: "validate(obj) — Valid Data",
     entries: [
-      { label: "ata", value: "13 ns", time: 13, highlight: true },
-      { label: "ajv", value: "37 ns", time: 37 },
-      { label: "typebox", value: "48 ns", time: 48 },
-      { label: "valibot", value: "316 ns", time: 316 },
-      { label: "zod", value: "328 ns", time: 328 },
+      { label: "ata", value: "9 ns", time: 9, highlight: true },
+      { label: "ajv", value: "39 ns", time: 39 },
+      { label: "typebox", value: "50 ns", time: 50 },
+      { label: "valibot", value: "322 ns", time: 322 },
+      { label: "zod", value: "339 ns", time: 339 },
     ],
   },
   {
     name: "Complex",
     title: "Complex Schema — patternProperties + dependentSchemas",
     entries: [
-      { label: "ata", value: "26 ns", time: 26, highlight: true },
-      { label: "ajv", value: "113 ns", time: 113 },
+      { label: "ata", value: "17 ns", time: 17, highlight: true },
+      { label: "ajv", value: "116 ns", time: 116 },
     ],
   },
   {
-    name: "Invalid",
-    title: "isValidObject(obj) — Invalid Data",
+    name: "Unevaluated",
+    title: "unevaluatedProperties — anyOf + bitmask tracking",
     entries: [
-      { label: "ata", value: "2.0 ns", time: 2.0, highlight: true },
-      { label: "typebox", value: "2.7 ns", time: 2.7 },
-      { label: "ajv", value: "104 ns", time: 104 },
-      { label: "valibot", value: "838 ns", time: 838 },
-      { label: "zod", value: "11,670 ns", time: 11670 },
+      { label: "ata (valid)", value: "6.7 ns", time: 6.7, highlight: true },
+      { label: "ata (invalid)", value: "7.1 ns", time: 7.1, highlight: true },
+      { label: "ajv (valid)", value: "23.2 ns", time: 23.2 },
+      { label: "ajv (invalid)", value: "42.4 ns", time: 42.4 },
     ],
   },
   {
     name: "Compilation",
     title: "Schema Compilation",
     entries: [
-      { label: "ata", value: "554 ns", time: 554, highlight: true },
-      { label: "typebox", value: "52,030 ns", time: 52030 },
-      { label: "ajv", value: "1,140,000 ns", time: 1140000 },
+      { label: "ata", value: "556 ns", time: 556, highlight: true },
+      { label: "typebox", value: "54,000 ns", time: 54000 },
+      { label: "ajv", value: "1,240,000 ns", time: 1240000 },
     ],
   },
   {
@@ -76,8 +75,8 @@ export function Hero() {
         <p className="hero-desc">
           Native C++ validator built on <strong>simdjson</strong> and{" "}
           <strong>RE2</strong>. Hybrid JS codegen with V8 TurboFan
-          optimizations, 5.9x faster validation on complex schemas, 2,184x faster
-          compilation, 719x faster cold start. Full ajv feature parity with Draft 7 support.
+          optimizations, 6.8x faster validation on complex schemas, 2,075x faster
+          compilation, 460x faster cold start. Full unevaluatedProperties support with Draft 7 compatibility.
         </p>
         <div className="hero-buttons">
           <a href="#quickstart" className="btn btn-primary">
@@ -93,19 +92,19 @@ export function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-value">5.9x</span>
+            <span className="stat-value">6.8x</span>
             <span className="stat-label">Faster Validation</span>
           </div>
           <div className="stat">
-            <span className="stat-value">2,184x</span>
+            <span className="stat-value">2,075x</span>
             <span className="stat-label">Faster Compilation</span>
           </div>
           <div className="stat">
-            <span className="stat-value">3.6x</span>
+            <span className="stat-value">3.8x</span>
             <span className="stat-label">Simple Schemas</span>
           </div>
           <div className="stat">
-            <span className="stat-value">98.4%</span>
+            <span className="stat-value">96.9%</span>
             <span className="stat-label">Spec Compliance</span>
           </div>
         </div>
