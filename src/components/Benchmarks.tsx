@@ -71,7 +71,7 @@ const tabs: BenchTab[] = [
     subtitle: 'Time per compilation, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_all_mitata.mjs',
     entries: [
-      { label: 'ata', value: '533 ns', time: 533, highlight: true },
+      { label: 'ata', value: '554 ns', time: 554, highlight: true },
       { label: 'typebox', value: '52,030 ns', time: 52030 },
       { label: 'ajv', value: '1,140,000 ns', time: 1140000 },
     ],

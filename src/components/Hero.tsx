@@ -44,7 +44,7 @@ const heroTabs = [
     name: "Compilation",
     title: "Schema Compilation",
     entries: [
-      { label: "ata", value: "533 ns", time: 533, highlight: true },
+      { label: "ata", value: "554 ns", time: 554, highlight: true },
       { label: "typebox", value: "52,030 ns", time: 52030 },
       { label: "ajv", value: "1,140,000 ns", time: 1140000 },
     ],
@@ -75,7 +75,7 @@ export function Hero() {
         <p className="hero-desc">
           Native C++ validator built on <strong>simdjson</strong> and{" "}
           <strong>RE2</strong>. Hybrid JS codegen with V8 TurboFan
-          optimizations, 5.9x faster validation on complex schemas, 1,969x faster
+          optimizations, 5.9x faster validation on complex schemas, 2,184x faster
           compilation, 719x faster cold start. Full ajv feature parity with Draft 7 support.
         </p>
         <div className="hero-buttons">
@@ -96,7 +96,7 @@ export function Hero() {
             <span className="stat-label">Faster Validation</span>
           </div>
           <div className="stat">
-            <span className="stat-value">1,969x</span>
+            <span className="stat-value">2,184x</span>
             <span className="stat-label">Faster Compilation</span>
           </div>
           <div className="stat">
