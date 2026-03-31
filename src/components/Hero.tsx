@@ -62,7 +62,8 @@ const heroTabs = [
 export function Hero() {
   const [active, setActive] = useState(0);
   const tab = heroTabs[active];
-  const maxTime = Math.max(...tab.entries.map((e) => e.time));
+  const maxLog = Math.max(...tab.entries.map((e) => Math.log10(e.time + 1)));
+  const barWidth = (time: number) => Math.max((Math.log10(time + 1) / maxLog) * 100, 3);
 
   return (
     <section className="hero">
@@ -134,7 +135,7 @@ export function Hero() {
                     <div
                       className={`hero-chart-bar ${entry.highlight ? "highlight" : ""}`}
                       style={{
-                        width: `${Math.max((entry.time / maxTime) * 100, 2)}%`,
+                        width: `${barWidth(entry.time)}%`,
                       }}
                     />
                   </div>
