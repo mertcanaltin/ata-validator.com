@@ -62,8 +62,8 @@ const heroTabs = [
 export function Hero() {
   const [active, setActive] = useState(0);
   const tab = heroTabs[active];
-  const maxLog = Math.max(...tab.entries.map((e) => Math.log10(e.time + 1)));
-  const barWidth = (time: number) => Math.max((Math.log10(time + 1) / maxLog) * 100, 3);
+  const maxSqrt = Math.max(...tab.entries.map((e) => Math.sqrt(e.time)));
+  const barWidth = (time: number) => Math.max((Math.sqrt(time) / maxSqrt) * 100, 4);
 
   return (
     <section className="hero">
