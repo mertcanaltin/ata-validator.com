@@ -888,6 +888,7 @@ code {
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
@@ -895,19 +896,20 @@ code {
     gap: 32px;
   }
   .hero h1 { font-size: 1.8rem; }
-  .hero-desc { font-size: 0.95rem; margin-bottom: 24px; }
+  .hero-desc { font-size: 0.95rem; margin-bottom: 24px; max-width: 100%; }
   .hero-buttons { flex-wrap: wrap; margin-bottom: 32px; }
-  .hero-stats { flex-wrap: wrap; gap: 16px 32px; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .stat-value { font-size: 1.2rem; }
   .stat-label { font-size: 0.7rem; }
 
   .hero-chart { border-radius: 12px; max-width: 100%; overflow: hidden; }
   .hero-chart-body { padding: 14px 12px 12px; }
   .hero-chart-title { font-size: 0.85rem; margin-bottom: 14px; }
-  .hero-chart-tabs { padding: 0 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .hero-chart-tab { padding: 8px 8px; font-size: 0.65rem; white-space: nowrap; }
+  .hero-chart-tabs { padding: 0 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .hero-chart-tabs::-webkit-scrollbar { display: none; }
+  .hero-chart-tab { padding: 8px 8px; font-size: 0.65rem; white-space: nowrap; flex-shrink: 0; }
   .hero-chart-row { grid-template-columns: 52px 1fr 40px; gap: 6px; }
-  .hero-chart-label { font-size: 0.65rem; }
+  .hero-chart-label { font-size: 0.65rem; overflow: hidden; text-overflow: ellipsis; }
   .hero-chart-label strong { font-size: 0.65rem; }
   .hero-chart-value { font-size: 0.6rem; min-width: auto; }
   .hero-chart-bar-wrap { height: 20px; }
@@ -924,20 +926,22 @@ code {
   }
   .feature-text h3 { font-size: 1.2rem; }
 
-  .bench-chart { border-radius: 12px; }
-  .bench-chart-body { padding: 20px 16px 16px; }
-  .bench-chart-title { font-size: 1.1rem; }
-  .bench-chart-row { grid-template-columns: 70px 1fr auto; gap: 8px; }
-  .bench-chart-label { font-size: 0.75rem; }
-  .bench-chart-value { font-size: 0.75rem; min-width: 70px; }
+  .bench-chart { border-radius: 12px; max-width: 100%; }
+  .bench-chart-body { padding: 20px 12px 16px; }
+  .bench-chart-title { font-size: 1rem; }
+  .bench-tabs { padding: 0 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .bench-tabs::-webkit-scrollbar { display: none; }
+  .bench-tab { padding: 12px 10px; font-size: 0.75rem; white-space: nowrap; flex-shrink: 0; }
+  .bench-chart-row { grid-template-columns: 60px 1fr auto; gap: 6px; }
+  .bench-chart-label { font-size: 0.7rem; overflow: hidden; text-overflow: ellipsis; }
+  .bench-chart-value { font-size: 0.7rem; min-width: 55px; }
   .bench-chart-bar-wrap { height: 28px; }
-  .bench-tab { padding: 12px 14px; font-size: 0.8rem; }
 
   .compliance-inner { grid-template-columns: 1fr; gap: 40px; }
   .compliance h2 { font-size: 1.6rem; }
 
   .qs-grid { grid-template-columns: 1fr; }
-  .code-body { font-size: 0.7rem; padding: 12px; }
+  .code-body { font-size: 0.7rem; padding: 12px; overflow-x: auto; }
 
   .arch-flow { flex-direction: column; align-items: center; }
   .arch-arrow { transform: rotate(90deg); margin: 0; }
@@ -954,15 +958,22 @@ code {
 
   .foundation h2, .benchmarks h2, .compliance h2,
   .quickstart h2, .architecture h2, .opensource h2 { font-size: 1.5rem; }
+
+  .keyword-grid { gap: 4px; }
+  .kw { padding: 4px 8px; font-size: 0.65rem; }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.5rem; }
+  .hero h1 { font-size: 1.4rem; }
   .hero { padding: 80px 12px 40px; }
-  .hero-stats { flex-direction: column; gap: 12px; }
-  .hero-stats .stat { flex-direction: row; align-items: baseline; gap: 8px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-value { font-size: 1.1rem; }
   .nav-links a:not(.nav-github) { display: none; }
   .footer-inner { grid-template-columns: 1fr; }
-  .bench-item { grid-template-columns: 48px 1fr auto; }
   .btn { padding: 8px 16px; font-size: 0.8rem; }
+  .bench-chart-row { grid-template-columns: 50px 1fr auto; gap: 4px; }
+  .bench-chart-label { font-size: 0.65rem; }
+  .bench-chart-value { font-size: 0.65rem; min-width: 45px; }
+  .hero-chart-row { grid-template-columns: 45px 1fr 35px; gap: 4px; }
+  .compliance-score { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
