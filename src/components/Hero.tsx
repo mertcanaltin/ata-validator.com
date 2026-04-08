@@ -98,24 +98,6 @@ export function Hero() {
             Star on GitHub
           </a>
         </div>
-        <div className="hero-stats">
-          <div className="stat">
-            <span className="stat-value">94x</span>
-            <span className="stat-label">$dynamicRef Override</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">5.3x</span>
-            <span className="stat-label">Normal Validation</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">2,051x</span>
-            <span className="stat-label">Faster Compilation</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">94.2%</span>
-            <span className="stat-label">Spec Compliance</span>
-          </div>
-        </div>
       </div>
       <div>
         <div className="hero-chart">
@@ -158,6 +140,24 @@ export function Hero() {
           >
             View benchmark →
           </a>
+        </div>
+        <div className="hero-stats">
+          <div className="stat">
+            <span className="stat-value">94x</span>
+            <span className="stat-label">$dynamicRef Override</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">5.3x</span>
+            <span className="stat-label">Normal Validation</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">2,051x</span>
+            <span className="stat-label">Faster Compilation</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">94.2%</span>
+            <span className="stat-label">Spec Compliance</span>
+          </div>
         </div>
       </div>
     </section>
