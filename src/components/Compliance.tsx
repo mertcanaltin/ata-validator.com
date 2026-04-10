@@ -15,7 +15,7 @@ export function Compliance() {
     <section className="compliance">
       <div className="compliance-inner">
         <div className="compliance-text">
-          <h2>94.2% Spec Compliance</h2>
+          <h2>95.3% Spec Compliance</h2>
           <p>
             Tested against the official{' '}
             <a href="https://github.com/json-schema-org/JSON-Schema-Test-Suite" target="_blank">
@@ -33,14 +33,14 @@ export function Compliance() {
                 <circle cx="60" cy="60" r="54" fill="none" stroke="#1a2332" strokeWidth="8" />
                 <circle
                   cx="60" cy="60" r="54" fill="none" stroke="#00d4aa" strokeWidth="8"
-                  strokeDasharray="339.3" strokeDashoffset="19.7" strokeLinecap="round"
+                  strokeDasharray="339.3" strokeDashoffset="16.0" strokeLinecap="round"
                   transform="rotate(-90 60 60)"
                 />
               </svg>
-              <span className="score-text">94.2%</span>
+              <span className="score-text">95.3%</span>
             </div>
             <div className="score-details">
-              <div><strong>1,156</strong> tests passed</div>
+              <div><strong>1,170</strong> tests passed</div>
               <div><strong>$dynamicRef</strong> 42/42 (100%)</div>
               <div><strong>Draft 7 + 2020-12</strong></div>
             </div>

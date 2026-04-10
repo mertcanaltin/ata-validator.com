@@ -52,8 +52,8 @@ const heroTabs = [
     name: "Dynamic",
     title: "$dynamicRef Cross-Schema Override",
     entries: [
-      { label: "ata", value: "1.9 ns", time: 1.9, highlight: true },
-      { label: "ajv", value: "179 ns", time: 179 },
+      { label: "ata", value: "2.6 ns", time: 2.6, highlight: true },
+      { label: "ajv", value: "183 ns", time: 183 },
     ],
   },
   {
@@ -83,7 +83,7 @@ export function Hero() {
         <p className="hero-desc">
           Native C++ validator built on <strong>simdjson</strong> and{" "}
           <strong>RE2</strong>. Hybrid JS codegen with V8 TurboFan
-          optimizations. Up to 94x faster on $dynamicRef, 5.3x on normal schemas, 2,729x faster
+          optimizations. Up to 70x faster on $dynamicRef, 3.1x on normal schemas, 2,729x faster
           compilation. Full $dynamicRef/$anchor support, Draft 2020-12 + Draft 7 compatible.
         </p>
         <div className="hero-buttons">
@@ -143,11 +143,11 @@ export function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-value">94x</span>
+            <span className="stat-value">70x</span>
             <span className="stat-label">$dynamicRef Override</span>
           </div>
           <div className="stat">
-            <span className="stat-value">5.3x</span>
+            <span className="stat-value">3.1x</span>
             <span className="stat-label">Normal Validation</span>
           </div>
           <div className="stat">
@@ -155,7 +155,7 @@ export function Hero() {
             <span className="stat-label">Faster Compilation</span>
           </div>
           <div className="stat">
-            <span className="stat-value">94.2%</span>
+            <span className="stat-value">95.3%</span>
             <span className="stat-label">Spec Compliance</span>
           </div>
         </div>

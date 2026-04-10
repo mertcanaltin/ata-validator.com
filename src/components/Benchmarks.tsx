@@ -81,10 +81,10 @@ const tabs: BenchTab[] = [
     subtitle: 'Time per validation in nanoseconds, mitata (lower is better)',
     link: 'https://github.com/ata-core/ata-validator/blob/master/benchmark/bench_dynamicref_vs_ajv.mjs',
     entries: [
-      { label: 'ata (override)', value: '1.9 ns', time: 1.9, highlight: true },
+      { label: 'ata (override)', value: '2.6 ns', time: 2.6, highlight: true },
       { label: 'ata (tree)', value: '19 ns', time: 19, highlight: true },
       { label: 'ajv (tree)', value: '50 ns', time: 50 },
-      { label: 'ajv (override)', value: '179 ns', time: 179 },
+      { label: 'ajv (override)', value: '183 ns', time: 183 },
     ],
   },
   {
