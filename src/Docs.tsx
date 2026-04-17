@@ -240,6 +240,51 @@ app.post('/users', {
               schema without adapters.
             </p>
           </section>
+
+          <section id="compliance">
+            <h2>Compliance</h2>
+            <p>Test suite results for the current release.</p>
+
+            <table className="docs-table">
+              <thead>
+                <tr><th>Suite</th><th>Result</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="https://github.com/json-schema-org/JSON-Schema-Test-Suite" target="_blank" rel="noreferrer">
+                      JSON Schema Test Suite (Draft 2020-12)
+                    </a>
+                  </td>
+                  <td>98.5%</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/ExodusMovement/schemasafe" target="_blank" rel="noreferrer">
+                      @exodus/schemasafe test suite
+                    </a>
+                  </td>
+                  <td>95.3%</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/nst/JSONTestSuite" target="_blank" rel="noreferrer">
+                      JSONTestSuite (nst)
+                    </a>
+                  </td>
+                  <td>283 / 283</td>
+                </tr>
+                <tr>
+                  <td>$dynamicRef / $anchor</td>
+                  <td>42 / 42</td>
+                </tr>
+                <tr>
+                  <td>OSS-Fuzz</td>
+                  <td>Submitted</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
         </main>
       </div>
     </>
