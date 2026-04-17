@@ -90,6 +90,41 @@ const result = v.validate({ id: 42 })
               <li><strong>Precompiled Validator.</strong> Reusing a single <code>Validator</code> instance across requests avoids compile overhead on the hot path.</li>
             </ul>
           </section>
+
+          <section id="features">
+            <h2>Features</h2>
+            <p>Supported JSON Schema drafts, keywords, and formats.</p>
+
+            <table className="docs-table">
+              <thead>
+                <tr><th>Area</th><th>Supported</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Drafts</strong></td>
+                  <td>Draft 2020-12, Draft 7</td>
+                </tr>
+                <tr>
+                  <td><strong>Keywords</strong></td>
+                  <td>
+                    type, properties, items, prefixItems, $ref, $dynamicRef, $anchor,
+                    oneOf, anyOf, allOf, not, if/then/else, dependencies,
+                    patternProperties, additionalProperties, contains, minContains,
+                    maxContains, unevaluatedProperties, unevaluatedItems,
+                    minLength, maxLength, minimum, maximum, multipleOf, enum, const
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Formats</strong></td>
+                  <td>date, date-time, time, email, uri, uri-reference, uuid, ipv4, ipv6, regex (RE2), hostname</td>
+                </tr>
+                <tr>
+                  <td><strong>Extras</strong></td>
+                  <td>Cross-schema $ref, recursion depth guard for circular refs, Standard Schema V1 compatibility, <code>__proto__</code>-safe const/enum comparison</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
         </main>
       </div>
     </>
