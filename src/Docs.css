@@ -127,6 +127,19 @@
 @media (max-width: 1024px) {
   .docs-content h1 { font-size: 30px; }
   .docs-content h2 { font-size: 22px; }
+  .docs-content section { padding-top: 32px; scroll-margin-top: 16px; }
+}
+
+@media (max-width: 640px) {
+  .docs-nav { padding: 14px 16px; font-size: 13px; }
+  .docs-layout { padding: 20px 16px; gap: 16px; }
+  .docs-content { max-width: 100%; }
+  .docs-content h1 { font-size: 26px; }
+  .docs-content h2 { font-size: 20px; }
+  .docs-content h3 { font-size: 16px; }
+  .docs-content p,
+  .docs-content ul,
+  .docs-content ol { font-size: 14px; }
 }
 
 .quick-start {
@@ -146,6 +159,14 @@
   color: var(--text-dim);
 }
 
+@media (max-width: 1024px) {
+  .quick-start { padding: 22px 20px; }
+}
+@media (max-width: 640px) {
+  .quick-start { padding: 18px 16px; border-radius: 10px; }
+  .quick-start h1 { font-size: 24px !important; }
+}
+
 .docs-table {
   width: 100%;
   border-collapse: collapse;
@@ -157,10 +178,16 @@
   padding: 10px 12px;
   text-align: left;
   vertical-align: top;
+  word-break: break-word;
 }
 .docs-table th {
   background: var(--bg-subtle);
   font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .docs-table { font-size: 12.5px; }
+  .docs-table th, .docs-table td { padding: 8px 10px; }
 }
 
 .docs-code {
@@ -172,6 +199,7 @@
   font-size: 13px;
   overflow-x: auto;
   line-height: 1.6;
+  -webkit-overflow-scrolling: touch;
 }
 .docs-code code {
   background: transparent;
@@ -179,4 +207,8 @@
   font-size: inherit;
   color: inherit;
   border-radius: 0;
+}
+
+@media (max-width: 640px) {
+  .docs-code { padding: 12px 14px; font-size: 12px; }
 }
