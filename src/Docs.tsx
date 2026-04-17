@@ -125,6 +125,31 @@ const result = v.validate({ id: 42 })
               </tbody>
             </table>
           </section>
+
+          <section id="install">
+            <h2>Installation</h2>
+
+            <h3>From npm</h3>
+            <pre className="docs-code">{`npm install ata-validator`}</pre>
+            <p>
+              The install script downloads a prebuilt binary for your platform when available.
+              Linux x64/arm64, macOS x64/arm64, and Windows x64 are covered.
+            </p>
+
+            <h3>Without a native addon</h3>
+            <p>
+              If no prebuilt is available and a native build fails, ata automatically falls
+              back to a pure-JS validator. Every feature works; only raw throughput differs.
+            </p>
+
+            <h3>Building without RE2</h3>
+            <p>
+              For environments where the RE2 dependency is undesirable (Node.js core vendoring, for
+              example), build with the <code>ATA_NO_RE2</code> flag. The JS regex engine is used for
+              pattern keywords instead, at the cost of linear-time guarantees.
+            </p>
+            <pre className="docs-code">{`ATA_NO_RE2=1 npm install ata-validator`}</pre>
+          </section>
         </main>
       </div>
     </>
