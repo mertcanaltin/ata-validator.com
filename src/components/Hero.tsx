@@ -98,7 +98,7 @@ export function Hero() {
           >
             Star on GitHub
           </a>
-          <Link to="/docs" className="btn btn-secondary">
+          <Link to="/docs" className="btn btn-secondary btn-mobile-only">
             Docs
           </Link>
         </div>
