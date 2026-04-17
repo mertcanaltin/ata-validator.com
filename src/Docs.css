@@ -47,6 +47,7 @@
   top: 20px;
   align-self: start;
   font-size: 14px;
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
@@ -90,6 +91,7 @@
 .docs-content {
   max-width: 720px;
   text-align: left;
+  min-width: 0;
 }
 
 .docs-content section {
