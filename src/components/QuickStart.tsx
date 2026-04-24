@@ -23,6 +23,22 @@ const result = v.validate({ name: "Mert", age: 26 });
 console.log(result.valid); // true`}</CodeWindow>
         </div>
         <div className="qs-card">
+          <h4>Build-time compile (TypeScript types included)</h4>
+          <CodeWindow title="terminal">{`$ npx ata compile schemas/user.json \\
+    -o src/user.validator.mjs --name User`}</CodeWindow>
+          <CodeWindow title="handler.ts">{`import { isValid, validate, type User }
+  from './user.validator.mjs'
+
+if (isValid(incoming)) {
+  incoming.id    // number (narrowed)
+  incoming.role  // 'admin' | 'user' | 'guest' | undefined
+}
+
+// Output bundle: ~1 KB gzipped (standard)
+//                ~0.5 KB gzipped (--abort-early)
+// Zero ata-validator dependency at runtime.`}</CodeWindow>
+        </div>
+        <div className="qs-card">
           <h4>C / C++</h4>
           <CodeWindow title="CMakeLists.txt">{`FetchContent_Declare(ata
   GIT_REPOSITORY https://github.com/

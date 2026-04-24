@@ -65,6 +65,16 @@ const heroTabs = [
       { label: "ajv (regex)", value: "765 ms", time: 765 },
     ],
   },
+  {
+    name: "Bundle",
+    title: "Browser bundle size (gzipped, 10-field schema)",
+    entries: [
+      { label: "ata compile (abort-early)", value: "0.5 KB", time: 0.5, highlight: true },
+      { label: "ata compile (standard)", value: "1.1 KB", time: 1.1, highlight: true },
+      { label: "ajv (runtime)", value: "30 KB", time: 30 },
+      { label: "ata (runtime)", value: "27 KB", time: 27 },
+    ],
+  },
 ];
 
 export function Hero() {
