@@ -64,10 +64,10 @@ const tabs: Tab[] = [
   },
   {
     name: 'Compile',
-    title: 'Schema Compilation',
+    title: 'Schema instantiation (ata is lazy — codegen runs on first validate)',
     link: `${FILE_BASE}/bench_all_mitata.mjs`,
     entries: [
-      { label: 'ata', value: '9 ns', time: 9, highlight: true },
+      { label: 'ata (lazy)', value: '9 ns', time: 9, highlight: true },
       { label: 'typebox', value: '53,000 ns', time: 53000 },
       { label: 'ajv', value: '1,200,000 ns', time: 1200000 },
     ],

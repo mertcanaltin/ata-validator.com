@@ -8,11 +8,12 @@ const features = [
     bullets: [
       { text: "4+ GB/s", rest: " JSON parsing throughput" },
       { text: "ARM NEON", rest: " and x86 AVX2/SSE support" },
-      { text: "159,000x faster", rest: " schema compilation" },
+      { text: "Lazy compile", rest: " — 159,000x cheaper instantiation than ajv" },
     ],
     code: `const { Validator } = require('ata-validator');
 
-// Lazy compile, 159,000x faster than ajv on cold start
+// Constructor defers codegen — work happens on first validate()
+// 8 ns to instantiate vs ajv's 1.33 ms compile
 const v = new Validator({
   type: "object",
   properties: {
