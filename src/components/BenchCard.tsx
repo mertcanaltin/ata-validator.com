@@ -20,12 +20,12 @@ const REPO_ROOT = 'https://github.com/ata-core/ata-validator/tree/master/benchma
 const tabs: Tab[] = [
   {
     name: 'Cold',
-    title: 'First Validation (compile + validate)',
+    title: 'First validation (construct + validate, lazy compile)',
     link: `${FILE_BASE}/bench_all_mitata.mjs`,
     entries: [
-      { label: 'ata', value: '2.1 us', time: 2.1, highlight: true },
-      { label: 'typebox', value: '54 us', time: 54 },
-      { label: 'ajv', value: '1,110 us', time: 1110 },
+      { label: 'ata', value: '16 ns', time: 16, highlight: true },
+      { label: 'typebox', value: '54,000 ns', time: 54000 },
+      { label: 'ajv', value: '1,160,000 ns', time: 1160000 },
     ],
   },
   {
@@ -38,6 +38,16 @@ const tabs: Tab[] = [
       { label: 'typebox', value: '50 ns', time: 50 },
       { label: 'valibot', value: '337 ns', time: 337 },
       { label: 'zod', value: '342 ns', time: 342 },
+    ],
+  },
+  {
+    name: 'Invalid',
+    title: 'isValid(obj), invalid data — first-fail boolean (apples-to-apples)',
+    link: `${FILE_BASE}/bench_all_mitata.mjs`,
+    entries: [
+      { label: 'ata', value: '0.93 ns', time: 0.93, highlight: true },
+      { label: 'typebox', value: '2.3 ns', time: 2.3 },
+      { label: 'ajv (firstFail)', value: '16 ns', time: 16 },
     ],
   },
   {
