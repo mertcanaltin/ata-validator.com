@@ -26,16 +26,16 @@ export function Hero() {
 
         <h1 className="hero-title">
           <span className="gradient-text">
-            Ultra-fast<br />
-            JSON Schema<br />
-            validator
+            First-class TypeScript.<br />
+            Zero-cost validation.<br />
+            Compiled JSON Schema.
           </span>
         </h1>
 
         <p className="hero-desc">
-          Native C++ validator built on <strong>simdjson</strong> and <strong>RE2</strong>,
-          with hybrid JS codegen and V8 TurboFan optimizations.
-          <strong>5x</strong> faster on hot loops, <strong>43,000x</strong> faster on cold start (lazy compile + tier-0 interpreter), <strong>71x</strong> faster on $dynamicRef.
+          Generic <strong>Validator&lt;T&gt;</strong> composes with TypeBox, Zod-from-JSON-Schema, and Valibot.
+          AOT compile your schemas to per-schema ESM modules with zero validator dependency in your bundle.
+          Optional runtime API for dynamic schemas.
         </p>
 
         <div className="hero-buttons">
