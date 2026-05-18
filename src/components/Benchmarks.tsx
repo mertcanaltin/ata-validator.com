@@ -1,5 +1,49 @@
 import { BenchCard } from './BenchCard'
 
+const STATS = [
+  {
+    headline: '246x',
+    caption: 'faster schema compile',
+    detail: (
+      <>
+        <strong>6 µs</strong> in ata vs <strong>1.5 ms</strong> in AJV. A 10-route
+        Fastify app boots in <strong>0.5 ms</strong> instead of <strong>12 ms</strong>.
+      </>
+    ),
+  },
+  {
+    headline: '7 ns',
+    caption: 'per validate on the valid path',
+    detail: (
+      <>
+        <code>validate(obj)</code> on hot data. <strong>5x faster</strong> than the
+        next non-ata validator.
+      </>
+    ),
+  },
+  {
+    headline: '0.93 ns',
+    caption: 'first-fail on invalid data',
+    detail: (
+      <>
+        <code>isValid(obj)</code> short-circuits at the first failed keyword.
+        Subnanosecond, fastest in class.
+      </>
+    ),
+  },
+  {
+    headline: '56x',
+    caption: 'smaller browser bundle',
+    detail: (
+      <>
+        <strong>955 B</strong> AOT-compiled validator gzipped vs{' '}
+        <strong>52.7 KB</strong> for the AJV runtime. Tree-shakeable, zero
+        dependency in the output.
+      </>
+    ),
+  },
+]
+
 export function Benchmarks() {
   return (
     <section id="benchmarks-section" className="benchmarks">
@@ -20,39 +64,17 @@ export function Benchmarks() {
         </p>
       </div>
 
-      <div className="bench-layout">
-        <div className="bench-stats">
-          <div>
-            <div className="bench-stat-value">246x</div>
-            <div className="bench-stat-label">
-              faster schema compile. <strong>6 µs</strong> in ata vs <strong>1.5 ms</strong> in AJV.
-              A 10-route Fastify app boots in <strong>0.5 ms</strong> instead of <strong>12 ms</strong>.
-            </div>
+      <div className="bench-stat-grid">
+        {STATS.map((s) => (
+          <div key={s.headline} className="bench-stat-card">
+            <div className="bench-stat-value">{s.headline}</div>
+            <div className="bench-stat-caption">{s.caption}</div>
+            <p className="bench-stat-detail">{s.detail}</p>
           </div>
-          <div>
-            <div className="bench-stat-value">7 ns</div>
-            <div className="bench-stat-label">
-              per <code>validate(obj)</code> on the valid path. 5x faster than the
-              next non-ata validator.
-            </div>
-          </div>
-          <div>
-            <div className="bench-stat-value">0.93 ns</div>
-            <div className="bench-stat-label">
-              per <code>isValid(obj)</code> first-fail on invalid data. Subnanosecond,
-              fastest in class.
-            </div>
-          </div>
-          <div>
-            <div className="bench-stat-value">56x</div>
-            <div className="bench-stat-label">
-              smaller bundle. <strong>955 B</strong> AOT-compiled validator gzipped
-              vs <strong>52.7 KB</strong> for the AJV runtime. Tree-shakeable, zero
-              dependency in the output.
-            </div>
-          </div>
-        </div>
+        ))}
+      </div>
 
+      <div className="bench-card-wrap">
         <BenchCard />
       </div>
     </section>

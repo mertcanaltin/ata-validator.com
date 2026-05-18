@@ -685,49 +685,85 @@ code {
   color: var(--text);
 }
 
-.bench-layout {
+.bench-stat-grid {
   max-width: 1080px;
-  margin: 0 auto;
+  margin: 0 auto 56px;
   display: grid;
-  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
-  gap: 56px;
-  align-items: start;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
 @media (max-width: 980px) {
-  .bench-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .bench-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 40px;
   }
 }
 
-.bench-stats {
+@media (max-width: 560px) {
+  .bench-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bench-stat-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 26px 26px;
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  min-width: 0;
+  min-height: 200px;
+  transition: border-color 0.18s, transform 0.18s;
+}
+
+.bench-stat-card:hover {
+  border-color: var(--text-mute);
 }
 
 .bench-stat-value {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.bench-stat-caption {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
+.bench-stat-detail {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin: 10px 0 0;
+}
+.bench-stat-detail strong {
+  color: var(--text);
+  font-weight: 700;
+}
+.bench-stat-detail code {
+  font-family: var(--font-code);
+  font-size: 0.92em;
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  padding: 1px 5px;
+  border-radius: 3px;
   color: var(--text);
 }
 
-.bench-stat-label {
-  font-family: var(--font-body);
-  color: var(--text-body);
-  font-size: 0.95rem;
-  line-height: 1.55;
-  margin-top: 10px;
-  max-width: 340px;
-}
-.bench-stat-label strong {
-  color: var(--text);
-  font-weight: 700;
+.bench-card-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .bench-card {
@@ -738,11 +774,25 @@ code {
   color: #e2e8f0;
 }
 
+.bench-card-tabs-wrap {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.bench-card-tabs-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 1px;
+  width: 28px;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(10, 25, 41, 0), rgba(10, 25, 41, 0.95));
+}
+
 .bench-card-tabs {
   display: flex;
-  gap: 4px;
-  padding: 8px 16px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 2px;
+  padding: 6px 14px 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -752,16 +802,17 @@ code {
   appearance: none;
   background: transparent;
   border: none;
-  color: rgba(226, 232, 240, 0.4);
+  color: rgba(226, 232, 240, 0.45);
   font-family: var(--font-code);
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  padding: 14px 14px;
+  padding: 11px 10px;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s;
   white-space: nowrap;
   flex-shrink: 0;
+  letter-spacing: 0.01em;
 }
 
 .bench-card-tab:hover { color: rgba(226, 232, 240, 0.7); }

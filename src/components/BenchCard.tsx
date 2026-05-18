@@ -116,7 +116,7 @@ const tabs: Tab[] = [
 ]
 
 export function BenchCard() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(5) // 'Compile' — matches the first headline stat
   const tab = tabs[active]
   const maxSqrt = Math.max(...tab.entries.map((e) => Math.sqrt(e.time)))
   const minVisibleWidth = 4
@@ -125,18 +125,20 @@ export function BenchCard() {
 
   return (
     <div className="bench-card">
-      <div className="bench-card-tabs" role="tablist">
-        {tabs.map((t, i) => (
-          <button
-            key={t.name}
-            role="tab"
-            aria-selected={i === active}
-            className={`bench-card-tab ${i === active ? 'is-active' : ''}`}
-            onClick={() => setActive(i)}
-          >
-            {t.name}
-          </button>
-        ))}
+      <div className="bench-card-tabs-wrap">
+        <div className="bench-card-tabs" role="tablist">
+          {tabs.map((t, i) => (
+            <button
+              key={t.name}
+              role="tab"
+              aria-selected={i === active}
+              className={`bench-card-tab ${i === active ? 'is-active' : ''}`}
+              onClick={() => setActive(i)}
+            >
+              {t.name}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="bench-card-body">
