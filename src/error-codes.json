@@ -308,7 +308,7 @@
     "headline": "value failed one or more allOf branches",
     "keyword": "allOf",
     "format": null,
-    "cause": "`allOf` requires every branch to pass; at least one rejected the data. Unlike `oneOf`/`anyOf`, ata does not collapse — each failing branch's errors surface independently with their own codes.",
+    "cause": "`allOf` requires every branch to pass; at least one rejected the data. Unlike `oneOf`/`anyOf`, ata does not collapse, each failing branch's errors surface independently with their own codes.",
     "fix": "Resolve each branch's errors individually."
   },
   "ATA4005": {
@@ -364,7 +364,7 @@
     "headline": "schema failed to compile",
     "keyword": "__compile__",
     "format": null,
-    "cause": "The schema passed to `new Validator(schema)` or `ata compile` is structurally invalid — malformed JSON Schema, unsupported keyword combination, or broken `$ref`.",
+    "cause": "The schema passed to `new Validator(schema)` or `ata compile` is structurally invalid: malformed JSON Schema, unsupported keyword combination, or broken `$ref`.",
     "fix": "Address the issue in the schema. The error message and source frame point at the offending location."
   }
 }
