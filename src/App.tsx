@@ -1,24 +1,27 @@
-import { Nav } from './components/Nav'
-import { Hero } from './components/Hero'
-import { Foundation } from './components/Foundation'
-import { Ecosystem } from './components/Ecosystem'
-import { Features } from './components/Features'
-import { Compliance } from './components/Compliance'
-import { QuickStart } from './components/QuickStart'
-import { Architecture } from './components/Architecture'
-import { Footer } from './components/Footer'
+import { Nav } from "./components/Nav";
+import { Hero } from "./components/Hero";
+import { Foundation } from "./components/Foundation";
+import { Ecosystem } from "./components/Ecosystem";
+import { Features } from "./components/Features";
+import { Compliance } from "./components/Compliance";
+import { QuickStart } from "./components/QuickStart";
+import { Architecture } from "./components/Architecture";
+import { Benchmarks } from "./components/Benchmarks";
+import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
     <>
       <Nav />
       <Hero />
+      <Benchmarks />
       <Foundation />
       <Ecosystem />
       <Features />
       <Compliance />
       <QuickStart />
       <Architecture />
+
       <section className="opensource">
         <div className="section-kicker">Free &amp; open source</div>
         <h2 className="section-title-xl gradient-text">MIT licensed</h2>
@@ -34,5 +37,5 @@ export default function App() {
       </section>
       <Footer />
     </>
-  )
+  );
 }
