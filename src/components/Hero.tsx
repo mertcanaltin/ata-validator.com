@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { BenchCard } from './BenchCard'
+import { ErrorShowcase } from './ErrorShowcase'
 
 const INSTALL_CMD = 'npm install ata-validator'
+const RELEASE_URL = 'https://github.com/ata-core/ata-validator/releases/tag/v0.15.0'
 
 export function Hero() {
   const [copied, setCopied] = useState(false)
@@ -22,31 +23,42 @@ export function Hero() {
       <div className="hero-grid" aria-hidden />
 
       <div className="hero-content">
-        <div className="hero-badge badge-ocean">Powered by simdjson &amp; RE2</div>
+        <a href={RELEASE_URL} target="_blank" rel="noopener noreferrer" className="hero-badge badge-ocean">
+          v0.15 → compiler-grade error messages
+        </a>
 
         <h1 className="hero-title">
           <span className="gradient-text">
-            First-class TypeScript.<br />
-            Zero-cost validation.<br />
-            Compiled JSON Schema.
+            JSON Schema validation,<br />
+            finally readable.
           </span>
         </h1>
 
         <p className="hero-desc">
-          Generic <strong>Validator&lt;T&gt;</strong> composes with TypeBox, Zod-from-JSON-Schema, and Valibot.
-          AOT compile your schemas to per-schema ESM modules with zero validator dependency in your bundle.
-          Optional runtime API for dynamic schemas.
+          ata-validator gives you <strong>tsc --pretty</strong> style errors with
+          schema source frame, request payload byte offset, and stable error
+          codes, in a <strong>1 KB</strong> compiled bundle.
+        </p>
+
+        <p className="hero-desc hero-desc-sub">
+          First-class TypeScript. AOT compilation. Standard Schema V1. Drop-in for
+          Fastify and RJSF. MIT licensed.
         </p>
 
         <div className="hero-buttons">
-          <a href="#quickstart" className="btn-gradient">Get Started</a>
+          <a href={RELEASE_URL} target="_blank" rel="noopener noreferrer" className="btn-gradient">
+            See v0.15 release →
+          </a>
+          <a href="#quickstart" className="btn btn-secondary">
+            Try in 30 seconds
+          </a>
           <a
             href="https://github.com/ata-core/ata-validator"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"
           >
-            ★ Star on GitHub
+            ★ GitHub
           </a>
           <Link to="/docs" className="btn btn-secondary btn-mobile-only">Docs</Link>
         </div>
@@ -78,7 +90,7 @@ export function Hero() {
       </div>
 
       <div className="hero-card">
-        <BenchCard />
+        <ErrorShowcase />
       </div>
     </section>
   )
