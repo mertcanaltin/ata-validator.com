@@ -1,0 +1,370 @@
+{
+  "ATA1001": {
+    "code": "ATA1001",
+    "headline": "value has wrong type",
+    "keyword": "type",
+    "format": null,
+    "cause": "The value at this path is not one of the types listed in the schema's `type` keyword. For `type: [\"string\", \"null\"]`, anything that isn't a string or null trips this.",
+    "fix": "Send a value that matches one of the allowed types, or widen `type` to cover what you're sending. If a JSON string would coerce cleanly to the expected type (e.g. `\"42\"` for `integer`), set `coerceTypes: true` on the Validator."
+  },
+  "ATA1002": {
+    "code": "ATA1002",
+    "headline": "value is not an object",
+    "keyword": "type",
+    "format": null,
+    "cause": "The schema requires `type: \"object\"` but the value was a primitive, array, or null.",
+    "fix": "Wrap the data in an object, or change the schema if a primitive was actually intended."
+  },
+  "ATA7001": {
+    "code": "ATA7001",
+    "headline": "object missing required property",
+    "keyword": "required",
+    "format": null,
+    "cause": "A property listed in `required` is absent from the object.",
+    "fix": "Add the missing property to the data, or remove it from `required` if it should be optional. When a present property has a name close to the missing one (e.g. `emial` vs `email`), ata attaches a `did you mean` suggestion to the error."
+  },
+  "ATA7002": {
+    "code": "ATA7002",
+    "headline": "object has property not allowed by schema",
+    "keyword": "additionalProperties",
+    "format": null,
+    "cause": "With `additionalProperties: false`, the object carries a key not declared in `properties` or `patternProperties`.",
+    "fix": "Remove the stray key, declare it in `properties`, or set `additionalProperties: true` if extra keys are acceptable. Use `removeAdditional: true` on the Validator to strip unknown keys silently instead of erroring."
+  },
+  "ATA7003": {
+    "code": "ATA7003",
+    "headline": "object has unevaluated property",
+    "keyword": "unevaluatedProperties",
+    "format": null,
+    "cause": "With `unevaluatedProperties: false`, the property wasn't accounted for by any composed branch (`allOf`/`anyOf`/`oneOf`). Unlike `additionalProperties`, this looks across composition.",
+    "fix": "Declare the property in one of the composed branches, or remove it from the data."
+  },
+  "ATA7004": {
+    "code": "ATA7004",
+    "headline": "array has unevaluated items",
+    "keyword": "unevaluatedItems",
+    "format": null,
+    "cause": "Like ATA7003 but for arrays. With `unevaluatedItems: false`, a position in the array wasn't covered by `items`, `prefixItems`, or any composed branch.",
+    "fix": "Cover the position with `items` or `prefixItems`, declare it in a composed branch, or shorten the array."
+  },
+  "ATA7005": {
+    "code": "ATA7005",
+    "headline": "dependentRequired property missing",
+    "keyword": "dependentRequired",
+    "format": null,
+    "cause": "The schema requires a property to be present whenever another is set (e.g. `dependentRequired: { creditCard: [\"billingAddress\"] }`), and the trigger is set without the dependent.",
+    "fix": "Add the dependent property, or remove the trigger from the data."
+  },
+  "ATA7006": {
+    "code": "ATA7006",
+    "headline": "property name violates schema",
+    "keyword": "propertyNames",
+    "format": null,
+    "cause": "A property name fails the `propertyNames` sub-schema. Usually a pattern, length, or format constraint on the key itself.",
+    "fix": "Rename the offending keys to match the rule, or relax the `propertyNames` schema."
+  },
+  "ATA7007": {
+    "code": "ATA7007",
+    "headline": "array does not contain a matching item",
+    "keyword": "contains",
+    "format": null,
+    "cause": "`contains` requires at least one element to match a sub-schema, and none did. With `minContains` set, the count is also enforced.",
+    "fix": "Add an element that satisfies the `contains` sub-schema, or relax the constraint."
+  },
+  "ATA2001": {
+    "code": "ATA2001",
+    "headline": "string shorter than minLength",
+    "keyword": "minLength",
+    "format": null,
+    "cause": "String length is below `minLength`. Length is counted in Unicode code points, not bytes.",
+    "fix": "Lengthen the string, or lower `minLength`."
+  },
+  "ATA2002": {
+    "code": "ATA2002",
+    "headline": "string longer than maxLength",
+    "keyword": "maxLength",
+    "format": null,
+    "cause": "String length exceeds `maxLength`. Counted in code points.",
+    "fix": "Shorten the string, or raise `maxLength`."
+  },
+  "ATA2003": {
+    "code": "ATA2003",
+    "headline": "number below minimum",
+    "keyword": "minimum",
+    "format": null,
+    "cause": "The number is below the inclusive `minimum`.",
+    "fix": "Send a number ≥ `minimum`, or lower the bound. Use `exclusiveMinimum` if the bound itself should be excluded."
+  },
+  "ATA2004": {
+    "code": "ATA2004",
+    "headline": "number above maximum",
+    "keyword": "maximum",
+    "format": null,
+    "cause": "The number is above the inclusive `maximum`.",
+    "fix": "Send a number ≤ `maximum`, or raise the bound."
+  },
+  "ATA2005": {
+    "code": "ATA2005",
+    "headline": "number not above exclusiveMinimum",
+    "keyword": "exclusiveMinimum",
+    "format": null,
+    "cause": "The number equals or is below `exclusiveMinimum`, which must be strictly exceeded.",
+    "fix": "Send a strictly greater number, or switch to `minimum` if the bound should be inclusive."
+  },
+  "ATA2006": {
+    "code": "ATA2006",
+    "headline": "number not below exclusiveMaximum",
+    "keyword": "exclusiveMaximum",
+    "format": null,
+    "cause": "The number equals or is above `exclusiveMaximum`, which must be strictly under.",
+    "fix": "Send a strictly smaller number, or switch to `maximum` if the bound should be inclusive."
+  },
+  "ATA2007": {
+    "code": "ATA2007",
+    "headline": "number not a multiple of expected divisor",
+    "keyword": "multipleOf",
+    "format": null,
+    "cause": "The number is not divisible by `multipleOf`. Floating-point rounding is handled with a small epsilon, so `0.1 + 0.2` against `multipleOf: 0.1` works.",
+    "fix": "Send a multiple of the divisor, or change `multipleOf`."
+  },
+  "ATA2008": {
+    "code": "ATA2008",
+    "headline": "array shorter than minItems",
+    "keyword": "minItems",
+    "format": null,
+    "cause": "Array length is below `minItems`.",
+    "fix": "Add elements, or lower `minItems`."
+  },
+  "ATA2009": {
+    "code": "ATA2009",
+    "headline": "array longer than maxItems",
+    "keyword": "maxItems",
+    "format": null,
+    "cause": "Array length exceeds `maxItems`.",
+    "fix": "Drop elements, or raise `maxItems`."
+  },
+  "ATA2010": {
+    "code": "ATA2010",
+    "headline": "object has fewer than minProperties",
+    "keyword": "minProperties",
+    "format": null,
+    "cause": "The object's key count is below `minProperties`.",
+    "fix": "Add keys, or lower `minProperties`."
+  },
+  "ATA2011": {
+    "code": "ATA2011",
+    "headline": "object has more than maxProperties",
+    "keyword": "maxProperties",
+    "format": null,
+    "cause": "The object's key count exceeds `maxProperties`.",
+    "fix": "Drop keys, or raise `maxProperties`."
+  },
+  "ATA2012": {
+    "code": "ATA2012",
+    "headline": "array has duplicate items",
+    "keyword": "uniqueItems",
+    "format": null,
+    "cause": "`uniqueItems: true` is set and two or more elements compare equal under deep equality (object key order doesn't matter).",
+    "fix": "Deduplicate the array, or drop the `uniqueItems` constraint."
+  },
+  "ATA2013": {
+    "code": "ATA2013",
+    "headline": "string does not match pattern",
+    "keyword": "pattern",
+    "format": null,
+    "cause": "The string doesn't match the schema's `pattern` regex. Patterns run under ECMA-262 semantics, with an re2 safety fallback for runaway patterns.",
+    "fix": "Adjust the data, or fix the regex. Test patterns in a small Node REPL before shipping; backslashes inside JSON strings need to be escaped twice."
+  },
+  "ATA3001": {
+    "code": "ATA3001",
+    "headline": "value does not match format \"email\"",
+    "keyword": "format",
+    "format": "email",
+    "cause": "The string fails ata's RFC 5322 email checker. Common failure modes: missing `@`, no dot in the domain, multiple `@`, or whitespace inside the local part.",
+    "fix": "Send a valid email. If your domain accepts a looser definition, override with `formats: { email: () => true }` on the Validator (or with a stricter custom function)."
+  },
+  "ATA3002": {
+    "code": "ATA3002",
+    "headline": "value does not match format \"date\"",
+    "keyword": "format",
+    "format": "date",
+    "cause": "The string is not a valid `YYYY-MM-DD` calendar date. ata validates the calendar, not just the pattern, so `2026-02-30` fails.",
+    "fix": "Use ISO 8601 calendar form. If you meant to include a time, switch the schema to `format: \"date-time\"`."
+  },
+  "ATA3003": {
+    "code": "ATA3003",
+    "headline": "value does not match format \"date-time\"",
+    "keyword": "format",
+    "format": "date-time",
+    "cause": "The string is not a valid RFC 3339 / ISO 8601 date-time (e.g. `2026-05-18T14:30:00Z`).",
+    "fix": "Use the `T` separator between date and time, and include a timezone (`Z` or `+HH:MM`)."
+  },
+  "ATA3004": {
+    "code": "ATA3004",
+    "headline": "value does not match format \"time\"",
+    "keyword": "format",
+    "format": "time",
+    "cause": "The string is not a valid RFC 3339 time (e.g. `14:30:00`, optionally with fractional seconds or timezone).",
+    "fix": "Use 24-hour `HH:MM:SS`. Add `.sss` for sub-second precision and `Z`/`±HH:MM` for timezone if needed."
+  },
+  "ATA3005": {
+    "code": "ATA3005",
+    "headline": "value does not match format \"uri\"",
+    "keyword": "format",
+    "format": "uri",
+    "cause": "The string is not an absolute URI. It needs a scheme (`https://`, `mailto:`, etc.).",
+    "fix": "Include the scheme, or relax the schema to `uri-reference` if relative paths are acceptable."
+  },
+  "ATA3006": {
+    "code": "ATA3006",
+    "headline": "value does not match format \"uri-reference\"",
+    "keyword": "format",
+    "format": "uri-reference",
+    "cause": "The string is not a valid URI reference. Covers both absolute and relative URIs but still rejects illegal characters and malformed percent-encoding.",
+    "fix": "Encode reserved characters properly, or strip them."
+  },
+  "ATA3007": {
+    "code": "ATA3007",
+    "headline": "value does not match format \"ipv4\"",
+    "keyword": "format",
+    "format": "ipv4",
+    "cause": "The string is not dotted-decimal IPv4 (four 0-255 octets separated by dots).",
+    "fix": "Send a literal IPv4. To accept either IPv4 or IPv6, use `oneOf` with two branches."
+  },
+  "ATA3008": {
+    "code": "ATA3008",
+    "headline": "value does not match format \"ipv6\"",
+    "keyword": "format",
+    "format": "ipv6",
+    "cause": "The string is not a valid IPv6 literal. Both full and `::`-compressed forms are accepted.",
+    "fix": "Send a well-formed IPv6. Square-bracket-wrapped forms from URLs (`[::1]`) need to be unwrapped first."
+  },
+  "ATA3009": {
+    "code": "ATA3009",
+    "headline": "value does not match format \"uuid\"",
+    "keyword": "format",
+    "format": "uuid",
+    "cause": "The string is not in the canonical UUID layout `8-4-4-4-12` lowercase hex.",
+    "fix": "Use the canonical form. Uppercase UUIDs from older libraries should be lowercased before validation; the nil UUID (`00000000-0000-0000-0000-000000000000`) is accepted."
+  },
+  "ATA3010": {
+    "code": "ATA3010",
+    "headline": "value does not match format \"hostname\"",
+    "keyword": "format",
+    "format": "hostname",
+    "cause": "The string is not a valid DNS hostname per RFC 1123.",
+    "fix": "Use label-separated names like `api.example.com`. Each label must be 1-63 alphanumerics or hyphens, and the total length must not exceed 253."
+  },
+  "ATA3099": {
+    "code": "ATA3099",
+    "headline": "value does not match user-defined format",
+    "keyword": "format",
+    "format": null,
+    "cause": "A custom format checker registered via the Validator's `formats` option returned `false` for this value.",
+    "fix": "Send a value the checker accepts, or adjust the checker. The `params.format` field on the error names which format fired."
+  },
+  "ATA6001": {
+    "code": "ATA6001",
+    "headline": "value is not one of the allowed enum values",
+    "keyword": "enum",
+    "format": null,
+    "cause": "The value doesn't deep-equal any entry in `enum`. ata also runs a bounded Levenshtein check against string enums; if a suggestion is attached, that's the likely intended value.",
+    "fix": "Pick a value from the enum, or add the value to the schema if it should be allowed."
+  },
+  "ATA6002": {
+    "code": "ATA6002",
+    "headline": "value does not equal const",
+    "keyword": "const",
+    "format": null,
+    "cause": "The value doesn't deep-equal the schema's `const`.",
+    "fix": "Send the constant, or relax to `enum` if multiple values should be accepted."
+  },
+  "ATA4001": {
+    "code": "ATA4001",
+    "headline": "value matched 0 of N oneOf variants",
+    "keyword": "oneOf",
+    "format": null,
+    "cause": "None of the `oneOf` branches accepted the data. ata picks the closest-scoring branch (lowest error count, weighted by keyword severity) and surfaces its errors as nested context under `branchErrors`.",
+    "fix": "Resolve the errors in the closest branch, or adjust the data to match a different branch. Add a `title` to each branch schema to get readable variant names in the error output."
+  },
+  "ATA4002": {
+    "code": "ATA4002",
+    "headline": "value matched more than one oneOf variant",
+    "keyword": "oneOf",
+    "format": null,
+    "cause": "`oneOf` requires exactly one match; the data satisfied two or more branches. Usually a sign the branches are not actually mutually exclusive.",
+    "fix": "Tighten the branches with a discriminator field or mutually exclusive constraints. If multiple matches are fine, switch to `anyOf`."
+  },
+  "ATA4003": {
+    "code": "ATA4003",
+    "headline": "value matched none of the anyOf variants",
+    "keyword": "anyOf",
+    "format": null,
+    "cause": "Every `anyOf` branch rejected the data. ata reports the closest match the same way `ATA4001` does for `oneOf`.",
+    "fix": "Resolve the closest branch's errors, or add a new branch covering the shape you're sending."
+  },
+  "ATA4004": {
+    "code": "ATA4004",
+    "headline": "value failed one or more allOf branches",
+    "keyword": "allOf",
+    "format": null,
+    "cause": "`allOf` requires every branch to pass; at least one rejected the data. Unlike `oneOf`/`anyOf`, ata does not collapse — each failing branch's errors surface independently with their own codes.",
+    "fix": "Resolve each branch's errors individually."
+  },
+  "ATA4005": {
+    "code": "ATA4005",
+    "headline": "value matched a forbidden schema",
+    "keyword": "not",
+    "format": null,
+    "cause": "A `not` schema accepted the data, which violates the constraint.",
+    "fix": "Change the data so the inner schema rejects it, or drop the `not` if the constraint isn't needed."
+  },
+  "ATA4006": {
+    "code": "ATA4006",
+    "headline": "value violated then/else branch",
+    "keyword": "if",
+    "format": null,
+    "cause": "An `if`/`then`/`else` schema: the `if` matched but `then` rejected, or `if` didn't match and `else` rejected.",
+    "fix": "Satisfy the active branch, or revisit the `if` clause if the wrong branch is being selected."
+  },
+  "ATA5001": {
+    "code": "ATA5001",
+    "headline": "$ref could not be resolved",
+    "keyword": "$ref",
+    "format": null,
+    "cause": "A `$ref` points to a schema id ata doesn't know about. Most often a typo, a missing `addSchema` call, or a `$ref` to a remote URL ata cannot fetch.",
+    "fix": "Register the referenced schema via `new Validator(main, { schemas: [referenced] })` or `addSchema(...)`. ata does not fetch remote refs at runtime; mirror them locally first."
+  },
+  "ATA5002": {
+    "code": "ATA5002",
+    "headline": "recursive $ref cycle detected at validate time",
+    "keyword": "$ref",
+    "format": null,
+    "cause": "A self-referencing schema produced a cycle that wasn't caught at compile time. Mostly happens with `$dynamicRef` and certain recursive `oneOf` patterns.",
+    "fix": "Add a termination condition (a discriminator, a depth limit, a non-recursive base case), or restructure to break the cycle."
+  },
+  "ATA9000": {
+    "code": "ATA9000",
+    "headline": "validation failed (abortEarly)",
+    "keyword": "__abort_early__",
+    "format": null,
+    "cause": "The Validator was constructed with `abortEarly: true`, which deliberately skips detailed error collection to maximize throughput. This stub means \"validation failed; rerun without `abortEarly` for details\".",
+    "fix": "This is not a bug. To get detailed errors, send the same data through a Validator constructed without `abortEarly`. The two can coexist: keep `abortEarly` on the hot path, run a non-abortEarly instance for diagnostics."
+  },
+  "ATA9001": {
+    "code": "ATA9001",
+    "headline": "input is not valid JSON",
+    "keyword": "__parse__",
+    "format": null,
+    "cause": "`validateJSON()` was called with a string or Buffer that doesn't parse. The message includes the parser's position.",
+    "fix": "Fix the JSON syntax at the reported offset. If the input is already a parsed object, call `validate()` (or `validateObject()`) instead."
+  },
+  "ATA9002": {
+    "code": "ATA9002",
+    "headline": "schema failed to compile",
+    "keyword": "__compile__",
+    "format": null,
+    "cause": "The schema passed to `new Validator(schema)` or `ata compile` is structurally invalid — malformed JSON Schema, unsupported keyword combination, or broken `$ref`.",
+    "fix": "Address the issue in the schema. The error message and source frame point at the offending location."
+  }
+}
